@@ -25,7 +25,38 @@ class SingleLL{
         this.length = this.length-1;
     }
 
-    add(value){
+    remove(valueToRemove){
+
+        if(!this.isListEmpty){
+            return undefined;
+        }
+        
+        if(this.head.value === valueToRemove){
+            this.removeHead();
+        }
+
+        let prevNode = this.head;
+        let currNode = this.head.next;
+
+        while(currNode){
+            if(currNode.value === valueToRemove){
+                break;
+            }else{
+                prevNode = currNode;
+                currNode = currNode.next;
+            }
+        }
+
+        prevNode.next = currNode.next;
+        this.length = this.length-1;
+    }
+
+    isListEmpty(){
+        return (this.length === 0);
+    }
+
+
+    addToTail(value){
         let currNode = this.head;
 
         if(currNode === null){
