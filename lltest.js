@@ -37,6 +37,15 @@ class llTest{
         assert(node.value === valToSearch, "Search Passed");
     }
 
+    
+    t_RecursiveSearch(){
+        let valToSearch = 567;
+        this.clearList();
+        this.addXValues(valToSearch*2);
+        let node = this.ll.recursiveSearch(this.ll.head, valToSearch);
+        assert(node.value === valToSearch, "Recursive Search Passed");
+    }
+
     clearList(){
         this.ll = new SingleLL();
     }
@@ -62,4 +71,5 @@ linkedTest.t_AddToHead();
 linkedTest.t_RemoveFromHead();
 linkedTest.t_RemoveFromAnywhere();
 linkedTest.t_Search();
+linkedTest.t_RecursiveSearch();
 

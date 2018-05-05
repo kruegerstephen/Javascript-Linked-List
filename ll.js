@@ -89,5 +89,19 @@ class SingleLL{
         return currNode;
 
     }
+
+    recursiveSearch(currNode, searchVal){
+        if(currNode === null){
+            return null;
+        }
+
+        if(currNode.value === searchVal){
+            return currNode;
+        }
+        
+        return this.recursiveSearch(currNode.next, searchVal);
+        
+    }
+
 }
 
